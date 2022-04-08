@@ -1,0 +1,10 @@
+bin/
+.vscode/
+slprj/
+hooks/locals
+*.r2018b
+*.test
+*.autosave
+*.asv
+*.slxc
+*.DS_Store
