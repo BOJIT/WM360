@@ -7,6 +7,5 @@ hooks/locals
 *.asv
 *.slxc
 *.DS_Store
-
 .vscode/settings.json
 .vscode/matlab.code-snippets
