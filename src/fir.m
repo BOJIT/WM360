@@ -9,6 +9,14 @@ close all; clc; clear;
 
 %-------------------------------- Entry Point ---------------------------------%
 
-dsp = DSP();
+sampleRate = 1000; % Hz
+
+dsp = DSP(sampleRate);
+
+signal = dsp.signal([0, 5, 3, 7, 4]);
+window = dsp.signal(hann(24)');
+
+
+dsp.convolutionPlot(window);
 
 %------------------------------ Helper Functions ------------------------------%
