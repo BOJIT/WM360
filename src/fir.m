@@ -41,6 +41,6 @@ f.stem(kernel);
 avLen = 5;
 filter = ones(1, avLen)./avLen;
 
-dsp.convolutionPlot(dsp.impulse(50), kernel);
+dsp.convolutionPlot(dsp.step(50), kernel);
 
 %------------------------------ Helper Functions ------------------------------%
