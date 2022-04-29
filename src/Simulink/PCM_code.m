@@ -3,12 +3,12 @@ clc
 
 %% Test Signal
 
-test_frequencies = [1300, 2400, 3200, 5600, 6300];
+test_frequencies = [1300, 2400, 5100, 5600, 6300];
 
 
 %% Run Simulation with Parameters
 
-rTime = '1'; % Run Time
+rTime = '0.1'; % Run Time
 maxStep = '1e-5'; % Maximum step size
 
 mdl = 'PCM_System';
