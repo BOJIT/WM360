@@ -1,6 +1,6 @@
-tap = 15;
+tap = 25;
 fc = 6100;
-fs = 15000;
+fs = 48000;
 
 hzNum = zeros(1,tap);
 
@@ -13,7 +13,7 @@ for n = -m:m
         hzNum(n+m+1) = sin(omegaC*n)/(n*pi);
     end
 end
-
+disp(hzNum)
 hzDen = [1 zeros(1,(length(hzNum)-1))];
 
 [dB,w] = freqz(hzNum,[1],512);
@@ -24,8 +24,8 @@ dB = mag2db(abs(dB));
 figure;
 subplot(2,1,1)
 plot(w/pi*fs/2,dB)
-ax = gca;
-ax.YLim = [-30 0]
+% ax = gca;
+% ax.YLim = [-20 2]
 hold on
 xline(6100)
 hold on
@@ -33,6 +33,7 @@ yline(-3)
 
 xlabel('Frequency [Hz]')
 ylabel('Magnitude [dB]')
+title('Frequency and Phase response of 15 tap lowpass FIR filter')
 
 
 subplot(2,1,2)
@@ -41,5 +42,12 @@ plot(w/pi*fs/2,Phi)
 xlabel('Frequency [Hz]')
 ylabel('Phase [degrees]')
 
+
 figure;
-stem(conv(hzNum,[1 0 0 0 0 0]))
+y = conv(hzNum,[1 0 0 0 0 0])
+stem(0:(tap-1),y(1:tap))
+xlabel('n')
+ylabel('Amplitude')
+title('Impulse response of 15 tap lowpass FIR filter')
+% ax = gca;
+% ax.XLim = [0 tap+1]
