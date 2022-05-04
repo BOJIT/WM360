@@ -15,8 +15,9 @@ s = p/wa;
 
 %% Low-Pass Prototypes
 hp1 = 1/(s+1);
-hp2 = 1/(s^3 + 2*s^2 + 2*s + 1); 
+hp2 = 1/(s^2 + 1.4142*s + 1); 
 hp3 = 1/(s^3 + 2*s^2 + 2*s + 1);
+hp4 = 1/(s^4 + 2.6131*s^3 + 3.4142*s^2 + 1);
 
 
 [n,d] = numden(hp3);
@@ -32,10 +33,10 @@ d_coeff = sym2poly(d);
 
 model = 'PCM_System';
 load_system(model);
-cs = getActiveConfigSet(mdl);
+cs = getActiveConfigSet(model);
 mdl_cs = cs.copy;
 
-set_param(mdl_cs, 'StopTime', 0.01, 'MaxStep', 1e-5);
+% set_param(mdl_cs, 'StopTime', 0.01, 'MaxStep', 1e-5);
 simulation = sim(model, mdl_cs);
 
 
