@@ -12,6 +12,12 @@ classdef Simulation < handle
         DecimationFactor = 3;
         SampleRate = 48000;
         Scheme = 'linear';
+
+        FirNumeratorCoefficients = [1, 1];
+        FirDenominatorCoefficients = [1, 1];
+
+        IirNumeratorCoefficients = [1, 1];
+        IirDenominatorCoefficients = [1, 1];
     end
 
     properties (Dependent)
@@ -30,12 +36,18 @@ classdef Simulation < handle
         Params = [ ...
             "DecimationFactor", ...
             "SampleRate", ...
-            "Scheme", ...
+            "FirNumeratorCoefficients", ...
+            "FirDenominatorCoefficients", ...
+            "IirNumeratorCoefficients", ...
+            "IirNumeratorCoefficients", ...
+            "IsLinear", ...
+            "IsALaw", ...
         ];
     end
 
     properties (Access = private, Dependent)
-
+        IsLinear;
+        IsALaw;
     end
 
     %------------------------------- Constructor ------------------------------%
@@ -62,7 +74,25 @@ classdef Simulation < handle
 
     %------------------------------ Public Methods ----------------------------%
     methods
+        function [stream, data] = capture(obj, duration)
 
+        end
+
+        function [data] = playback(obj, stream)
+
+        end
+
+        function testSignal(obj, signal)
+
+        end
+
+        function setFIR(obj, coeff)
+
+        end
+
+        function setIIR(obj, coeff)
+
+        end
     end
 
     %------------------------------ Private Methods ---------------------------%
@@ -90,6 +120,14 @@ classdef Simulation < handle
         function set.Scheme(obj, val)
             obj.Scheme = val;
             obj.setConfig();
+        end
+
+        function val = get.IsLinear(obj)
+            val = (obj.Scheme == "linear");
+        end
+
+        function val = get.IsALaw(obj)
+            val = (obj.Scheme == "a-law");
         end
     end
 
