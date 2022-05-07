@@ -1,3 +1,10 @@
+% FILE:         generateFIR.m
+% DESCRIPTION:  Function to generate FIR Anti-Aliasing filter for PCM Encoder
+% AUTHOR:       Josh Routley
+% DATE CREATED: 07/05/2022
+
+%------------------------------------------------------------------------------%
+
 tap = 25;
 fc = 6100;
 fs = 48000;
