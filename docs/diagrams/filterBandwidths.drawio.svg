@@ -1,0 +1,179 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="663px" height="141px" viewBox="-0.5 -0.5 663 141" content="&lt;mxfile&gt;&lt;diagram id=&quot;SO07y-vPgJB1EYbXu_3R&quot; name=&quot;Page-1&quot;&gt;7VvPl+IoEP5rPLYPSGL0qPY4c9l5/V4fdvfIJJjkTQwuwW6dv36LBPLbbTdt2nEmOWgooIDi+6CgdGKtd8fPgu7DP7jP4glB/nFiPU4IwfPZAr6U5JRLHgjSkkBEfi5DpeA5+sF0VSM9RD5LtSwXSc5jGe3rQo8nCfNkTUaF4K/1Ylse+zXBngas1g0lePZozFrF/ox8GebSOXFL+RcWBaFpGZsR76gprBWnIfX5a0VkfZpYa8G5zN92xzWLlfXqdtmcyS06JlgiL6mwmOU1Xmh80IPTHZMnM1qW+EtlNEglPAHhKpS7GFIYXgU/JD5T2hCk0u9MeqHOCqkXHgT7TPcgsEGw5Ync0F0Uq3lfCi+MJMxOCq090gNYiwld6JkfhKdaD6WEKSWOtYQPGIT6UAXSacB5EDO6j9Kpx3dZhpdmRTfbvAl4rTXikFWzmRxYeKZ6LqkoBKqzMOpqMs269MREtGOg4XlPvSgJIHcOmVA3YPJMpncQL5mBlE1y4zI/aCKpnDBcwAAIxDhoFDAY9FoCzdHgCSsYMzLBYiqjl7p6qvEeFOqKFp54BA0TpMnpYg0ITU1sWQ0d2hB5tSqyGprmrvWGJm21piZ4qQy8FGXIPYNid0TxiOIKikkTxTbph+KWJmLPBkPxvAPFs1jqea7BefbPgZuMhzSbYQAXwmR/LDPhLcgKTdQuALhDX34YjZMcgqZIiy6SHWWdIzSOggTePZjjDHwvTMgINsWlzthFvq+qrwSDHtFvmSrFp70yTmYuZzVxHpWug+SpxmUGW8G/szWPuSjpuY3iuCG6S2ISVNhXWYwd/y9nDBRdtwFqor2KCqlsp02q5rpb5U8Nrv+FzcVA2FwW2PRXIzZvgk3BJSy2XJnpYXElsM7mjd2fGHegClZ3GLBihK7mD+B7nVpMBvUH6rSYEGuzmcFzF87BvAlNt6eLa59bkd9wDgB49FQpphehs12eE6e7yyUhcpV9XQ+M8OhBjx50iThitc6BqB9JnCZ2W5qu50FjREYYjzCuwNhuHQR7Xme0NBWu9hAwtgbytseT4M297Ss419asebX2gSdBjOyBwDkeBW8OziGOggS1joKkjdbBjoK9Ahw+TcNik6uAS8mfqATjJZlEjc3gwkSCyHh+7HN+RMjdbDZ34FPYi5Zr3PAELvUpWpoGvFzGqB0j2X41y2x6+GaWWA5kT+luD+Qo1+BK/rgED0s5lT5Pi3etxLbTxJsJQ1eY43asxGbNfN9K3A5vdAJQCpqkuyhN1T40QvD2EGzc7L3PGWgGMbogOMdDQbArijE6Az+fM3A3l8kWXkzNpdO7/YEuZUO6BLhXmORyOtgtOvxKsZVzq+QH0mSdPXdAk0JPwRHcM+bikLc0XZMgXVGR2lWHV0xGeZthedlTFV1wJYI6r0TiiKYKAAR95VEKLjnaxBxaHK9HfgLKX9M3d0yVAtfm5qLCUPMrjCpD8eI8GS92jHDXnV6/uMl9L+rjhUdX6ONaAXMHf1DA3HLPdPl6AXNnZMzNTgXAC3H6S+1LU9ctBH+D4AFNUdatTPJ41HtXnjpVU0WjWvj7sNAi9nRBUPE0Nx4yn87Mb2SuzUuEugfRk5eQLP8rkRcv/3JiffoX&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <style type="text/css">
+            /* latin */
+@font-face {
+  font-family: 'Architects Daughter';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4w.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+        </style>
+    </defs>
+    <g>
+        <path d="M 505 111 Q 505 111 662 111" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 505 111 M 505 111 C 503.25 111.24 558.91 109.91 662 111 M 505 111 C 504.46 111.51 559.57 110.7 662 111" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 515 122 Q 515 122 515 26" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 515 122 M 515 122 C 513.25 122.58 514.99 91.76 515 26 M 515 122 C 513.26 119.84 516.27 91.35 515 26" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="566" y="109" width="45" height="31" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 124px; margin-left: 589px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font style="font-size: 12px">
+                                    f / Hz
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="589" y="130" fill="rgb(0, 0, 0)" font-family="Architects Daughter" font-size="20px" text-anchor="middle">
+                    f / Hz
+                </text>
+            </switch>
+        </g>
+        <rect x="472" y="53" width="47" height="31" fill="none" stroke="none" transform="rotate(-90,495.5,68.5)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)rotate(-90 495.5 68.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 69px; margin-left: 496px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font style="font-size: 12px">
+                                    A / dB
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="496" y="75" fill="rgb(0, 0, 0)" font-family="Architects Daughter" font-size="20px" text-anchor="middle">
+                    A / dB
+                </text>
+            </switch>
+        </g>
+        <path d="M 517 57 L 604 57 Q 614 57 617.9 66.21 L 636 109" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 517 57 M 517 57 C 548.84 58.54 578.52 57.8 604 57 M 517 57 C 539.93 57.53 563.24 57.65 604 57 M 604 57 C 609.15 56.53 613.52 60.18 617.9 66.21 M 604 57 C 609.61 58.4 616.15 59.63 617.9 66.21 M 617.9 66.21 C 623.09 75.81 629.32 90.47 636 109 M 617.9 66.21 C 624.12 81.88 631.16 97.44 636 109" fill="none" stroke="#ff6666" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 25 110 Q 25 110 314 110" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 25 110 M 25 110 C 26.05 111.96 120.75 110.03 314 110 M 25 110 C 26.09 112.14 121.79 110.9 314 110" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 35 121 Q 35 121 35 25" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 35 121 M 35 121 C 36.05 119.3 36.82 87.89 35 25 M 35 121 C 34.9 120.48 34.5 86.95 35 25" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="152" y="109" width="45" height="31" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 124px; margin-left: 175px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font style="font-size: 12px">
+                                    f / Hz
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="175" y="130" fill="rgb(0, 0, 0)" font-family="Architects Daughter" font-size="20px" text-anchor="middle">
+                    f / Hz
+                </text>
+            </switch>
+        </g>
+        <rect x="-8" y="52" width="47" height="31" fill="none" stroke="none" transform="rotate(-90,15.5,67.5)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)rotate(-90 15.5 67.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 68px; margin-left: 16px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font style="font-size: 12px">
+                                    A / dB
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="16" y="74" fill="rgb(0, 0, 0)" font-family="Architects Daughter" font-size="20px" text-anchor="middle">
+                    A / dB
+                </text>
+            </switch>
+        </g>
+        <path d="M 285 115 L 285 26" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 285 115 M 285 115 C 283.47 83.39 283.42 52.46 285 26 M 285 115 C 286.31 87.97 285.84 60.78 285 26" fill="none" stroke="#007fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="2 6" pointer-events="stroke"/>
+        <rect x="245" y="0" width="77" height="22" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 11px; margin-left: 283px;">
+                        <div data-drawio-colors="color: #007FFF; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 127, 255); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                fN
+                                <sub>
+                                    oversample
+                                </sub>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="283" y="15" fill="#007FFF" font-family="Architects Daughter" font-size="12px" text-anchor="middle">
+                    fNoversample
+                </text>
+            </switch>
+        </g>
+        <rect x="66" y="0" width="81" height="22" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 11px; margin-left: 107px;">
+                        <div data-drawio-colors="color: #FF6666; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: &quot;Architects Daughter&quot;; color: rgb(255, 102, 102); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                fN
+                                <sub>
+                                    transmission
+                                </sub>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="107" y="15" fill="#FF6666" font-family="Architects Daughter" font-size="12px" text-anchor="middle">
+                    fNtransmission
+                </text>
+            </switch>
+        </g>
+        <path d="M 108.02 115 L 108.02 26" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 108.02 115 M 108.02 115 C 106.6 84.28 107.02 53.95 108.02 26 M 108.02 115 C 108.56 87.18 108.82 58.23 108.02 26" fill="none" stroke="#ff6666" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="2 6" pointer-events="stroke"/>
+        <path d="M 39 97 L 309 97" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 39 97 M 39 97 C 135.59 98.91 229.65 96.89 309 97 M 39 97 C 120.3 96.79 200.15 96.7 309 97" fill="none" stroke="#cccccc" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1 4" pointer-events="stroke"/>
+        <rect x="310" y="86" width="99" height="19" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 96px; margin-left: 359px;">
+                        <div data-drawio-colors="color: #007FFF; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: &quot;Architects Daughter&quot;; color: rgb(0, 127, 255); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font color="#cccccc" style="font-size: 10px">
+                                    Aliasing Noise Floor
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="359" y="99" fill="#007FFF" font-family="Architects Daughter" font-size="12px" text-anchor="middle">
+                    Aliasing Noise F...
+                </text>
+            </switch>
+        </g>
+        <path d="M 37 57 L 157 57 Q 167 57 176.37 60.5 L 306 109" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 37 57 M 37 57 C 80.5 58 120.64 56.23 157 57 M 37 57 C 82.98 55.75 130.62 56.51 157 57 M 157 57 C 162.74 57.05 169.11 57.24 176.37 60.5 M 157 57 C 162.66 57.34 167.95 56.23 176.37 60.5 M 176.37 60.5 C 211.54 71.76 245.18 84.81 306 109 M 176.37 60.5 C 226.01 78.5 277.7 98.11 306 109" fill="none" stroke="#007fff" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 37 57 L 79 57 Q 89 57 93.35 66.01 L 113.92 108.63" fill="none" stroke="none" pointer-events="stroke"/>
+        <path d="M 37 57 M 37 57 C 51.26 57.59 67.2 57.83 79 57 M 37 57 C 46.21 56.05 55.7 56.26 79 57 M 79 57 C 87.66 57.18 91.07 58.25 93.35 66.01 M 79 57 C 87.9 58.91 91.53 61.32 93.35 66.01 M 93.35 66.01 C 102.11 80.52 108.6 93.76 113.92 108.63 M 93.35 66.01 C 99.73 78.72 106.33 92.61 113.92 108.63" fill="none" stroke="#ff6666" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
