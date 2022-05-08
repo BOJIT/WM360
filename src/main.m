@@ -9,8 +9,15 @@ close all; clc; clear;
 
 %-------------------------------- Entry Point ---------------------------------%
 
-sim1 = Simulation();
-sim2 = Simulation();
+sim = Simulation();
+
+t = sim.capture();
+
+d = sim.encode(t);
+
+pause(2);
+
+sim.playback(t);
 
 %------------------------------ Helper Functions ------------------------------%
 

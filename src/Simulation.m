@@ -26,11 +26,13 @@ classdef Simulation < handle
 
     %---------------------------- Private Properties --------------------------%
     properties (Access = private)
-        EncoderPath = 'Simulink/PCM_Encoder.slx';
-        DecoderPath = 'Simulink/PCM_Decoder.slx';
+        EncoderPath = 'PCM_Encoder';
+        DecoderPath = 'PCM_Decoder';
 
         EncoderSim;
         DecoderSim;
+
+        NativeBitDepth = 16;    % Default sample depth of PC audio hardware
 
         % List of object properties that get written to Simulink workspace
         Params = [ ...
@@ -74,16 +76,48 @@ classdef Simulation < handle
 
     %------------------------------ Public Methods ----------------------------%
     methods
-        function [stream, data] = capture(obj, duration)
+        function stream = capture(obj, duration)
+            if nargin < 2
+                duration = 5;
+            end
 
+            r = audiorecorder(obj.SampleRate, obj.NativeBitDepth, 1);
+            fprintf("Recording %u seconds of audio in: ", duration);
+
+            t = 5;
+            while t > 0
+                fprintf("%u", t);
+                pause(1);
+                fprintf("\b");
+                t = t - 1;
+            end
+            fprintf("0\n");
+
+            obj.showProgress(duration);
+            recordblocking(r, duration);
+
+            fprintf("Audio Recording Complete\n");
+            stream = getaudiodata(r);
         end
 
-        function [data] = playback(obj, stream)
+        function playback(obj, stream)
+            duration = length(stream)/obj.SampleRate;
+            p = audioplayer(stream, obj.SampleRate, obj.NativeBitDepth);
 
+            fprintf("Playing back %u seconds of audio:\n", duration);
+            obj.showProgress(duration);
+            playblocking(p);
+            fprintf("Audio Playback Complete\n");
         end
 
-        function testSignal(obj, signal)
+        function data = encode(obj, stream)
+            obj.EncoderSim.setExternalInput(stream);
+            data = sim(obj.EncoderSim);
+        end
 
+        function stream = decode(obj, data)
+            obj.EncoderSim.setExternalInput(stream);
+            stream = sim(obj.DecoderSim);
         end
 
         function setFIR(obj, coeff)
@@ -101,6 +135,35 @@ classdef Simulation < handle
             for p = obj.Params
                 obj.EncoderSim.setVariable(p, obj.(p), 'Workspace', obj.EncoderSim.ModelName);
                 obj.DecoderSim.setVariable(p, obj.(p), 'Workspace', obj.DecoderSim.ModelName);
+            end
+        end
+
+        function showProgress(~, duration)
+            inc = 0;
+            t = timer;
+            t.TimerFcn = @t_inc;
+            t.StopFcn = @t_stop;
+            t.TasksToExecute = 20;
+            t.ExecutionMode = 'fixedRate';
+            t.Period = duration/20;
+
+            fprintf("---------------------------------\n");
+            fprintf("0%%");
+            start(t);
+
+            function t_inc(~, ~)
+                inc = inc + 5;
+                if mod(inc, 20) == 0
+                    fprintf("%u%%", inc);
+                else
+                    fprintf("-");
+                end
+            end
+
+            function t_stop(~, ~)
+                fprintf("\n");
+                fprintf("---------------------------------\n");
+                delete(t);
             end
         end
     end
