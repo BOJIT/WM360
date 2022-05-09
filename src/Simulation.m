@@ -33,10 +33,12 @@ classdef Simulation < handle
         DecoderSim;
 
         NativeBitDepth = 16;    % Default sample depth of PC audio hardware
+        DemoMode = false;       % Keeps standalone Simulink files operable
 
         % List of object properties that get written to Simulink workspace
         Params = [ ...
             "DecimationFactor", ...
+            "DemoMode", ...
             "SampleRate", ...
             "FirNumeratorCoefficients", ...
             "FirDenominatorCoefficients", ...
@@ -82,7 +84,7 @@ classdef Simulation < handle
             end
 
             r = audiorecorder(obj.SampleRate, obj.NativeBitDepth, 1);
-            fprintf("Recording %u seconds of audio in: ", duration);
+            fprintf("Recording %u seconds of audio in: ", round(duration, 3));
 
             t = 5;
             while t > 0
@@ -111,13 +113,26 @@ classdef Simulation < handle
         end
 
         function data = encode(obj, stream)
-            obj.EncoderSim.setExternalInput(stream);
-            data = sim(obj.EncoderSim);
+            stop_time = (1/obj.SampleRate) * (length(stream) - 1);
+            t = 0:(1/obj.SampleRate):stop_time;
+            in = timeseries(stream, t);
+
+            obj.EncoderSim = obj.EncoderSim.setExternalInput(in);
+            obj.EncoderSim = obj.EncoderSim.setModelParameter('StopTime', num2str(stop_time + (0.5/obj.SampleRate)));
+            result = sim(obj.EncoderSim);
+            data = result.yout{1}.Values.Data';
         end
 
         function stream = decode(obj, data)
-            obj.EncoderSim.setExternalInput(stream);
-            stream = sim(obj.DecoderSim);
+            stop_time = (1/obj.SampleRate) * (obj.DecimationFactor*length(data) - 1);
+            t = 0:(obj.DecimationFactor/obj.SampleRate):stop_time;
+            in = timeseries(int16(data), t);
+%             save('data.mat','in', '-v7.3');
+
+            obj.DecoderSim = obj.DecoderSim.setExternalInput(in);
+            obj.DecoderSim = obj.DecoderSim.setModelParameter('StopTime', num2str(stop_time + (0.5/obj.SampleRate)));
+            result = sim(obj.DecoderSim);
+            stream = result.yout{1}.Values.Data';
         end
 
         function setFIR(obj, coeff)
@@ -145,7 +160,7 @@ classdef Simulation < handle
             t.StopFcn = @t_stop;
             t.TasksToExecute = 20;
             t.ExecutionMode = 'fixedRate';
-            t.Period = duration/20;
+            t.Period = round(duration/20, 3);
 
             fprintf("---------------------------------\n");
             fprintf("0%%");

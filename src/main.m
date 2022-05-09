@@ -11,13 +11,16 @@ close all; clc; clear;
 
 sim = Simulation();
 
-t = sim.capture();
+a = sim.capture(3);
 
-d = sim.encode(t);
+% Any arbitrary signal can be input
+% t = 0:1/48000:(1e-3 - eps);
+% a = sin(2*pi*2000*t);
 
-pause(2);
+b = sim.encode(a);
+c = sim.decode(b);
 
-sim.playback(t);
+sim.playback(c);
 
 %------------------------------ Helper Functions ------------------------------%
 
