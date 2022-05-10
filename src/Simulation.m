@@ -32,8 +32,9 @@ classdef Simulation < handle
         EncoderSim;
         DecoderSim;
 
-        NativeBitDepth = 16;    % Default sample depth of PC audio hardware
-        DemoMode = false;       % Keeps standalone Simulink files operable
+        NativeBitDepth = 16;        % Default sample depth of PC audio hardware
+        DemoMode = false;           % Keeps standalone Simulink files operable
+        NormalizationLevel = 2.4;   % Scales recorded/output audio to full-scale
 
         % List of object properties that get written to Simulink workspace
         Params = [ ...
@@ -99,12 +100,17 @@ classdef Simulation < handle
             recordblocking(r, duration);
 
             fprintf("Audio Recording Complete\n");
-            stream = getaudiodata(r);
+            audio = getaudiodata(r, 'double')';
+            gain = obj.NormalizationLevel/max(abs(audio));
+            stream = audio.*gain;
         end
 
         function playback(obj, stream)
             duration = length(stream)/obj.SampleRate;
-            p = audioplayer(stream, obj.SampleRate, obj.NativeBitDepth);
+
+            gain = 1/max(abs(stream));
+            audio = gain.*stream;
+            p = audioplayer(audio, obj.SampleRate, obj.NativeBitDepth);
 
             fprintf("Playing back %u seconds of audio:\n", duration);
             obj.showProgress(duration);
@@ -135,12 +141,16 @@ classdef Simulation < handle
             stream = result.yout{1}.Values.Data';
         end
 
-        function setFIR(obj, coeff)
-
+        function setFIR(obj, hzNum, hzDen)
+            obj.FirNumeratorCoefficients = hzNum;
+            obj.FirDenominatorCoefficients = hzDen;
+            obj.setConfig();
         end
 
-        function setIIR(obj, coeff)
-
+        function setIIR(obj, hzNum, hzDen)
+            obj.IirNumeratorCoefficients = hzNum;
+            obj.IirDenominatorCoefficients = hzDen;
+            obj.setConfig();
         end
     end
 
@@ -148,8 +158,8 @@ classdef Simulation < handle
     methods
         function setConfig(obj)
             for p = obj.Params
-                obj.EncoderSim.setVariable(p, obj.(p), 'Workspace', obj.EncoderSim.ModelName);
-                obj.DecoderSim.setVariable(p, obj.(p), 'Workspace', obj.DecoderSim.ModelName);
+                obj.EncoderSim = obj.EncoderSim.setVariable(p, obj.(p), 'Workspace', obj.EncoderSim.ModelName);
+                obj.DecoderSim = obj.DecoderSim.setVariable(p, obj.(p), 'Workspace', obj.DecoderSim.ModelName);
             end
         end
 

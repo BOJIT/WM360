@@ -11,14 +11,29 @@ close all; clc; clear;
 
 sim = Simulation();
 
-a = sim.capture(3);
+a = sim.capture(2);
 
 % Any arbitrary signal can be input
 % t = 0:1/48000:(1e-3 - eps);
 % a = sin(2*pi*2000*t);
 
+fig = Figure([2, 2]);
+
+fig.ActiveAxes = 1;
+fig.plot(a);
+fig.Title = "Raw Audio";
+
 b = sim.encode(a);
+
+fig.ActiveAxes = 2;
+fig.plot(b);
+fig.Title = "PCM Stream";
+
 c = sim.decode(b);
+
+fig.ActiveAxes = 3;
+fig.plot(c);
+fig.Title = "Reconstructed Signal";
 
 sim.playback(c);
 
