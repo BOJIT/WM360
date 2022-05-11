@@ -11,11 +11,10 @@ close all; clc; clear;
 
 sim = Simulation();
 
-a = sim.capture(2);
+% a = sim.capture(2);
 
 % Any arbitrary signal can be input
-% t = 0:1/48000:(1e-3 - eps);
-% a = sin(2*pi*2000*t);
+a = sim.testSignal([130, 1200, 2700, 5100, 6300], 100);
 
 fig = Figure([2, 2]);
 
@@ -35,7 +34,7 @@ fig.ActiveAxes = 3;
 fig.plot(c);
 fig.Title = "Reconstructed Signal";
 
-sim.playback(c);
+% sim.playback(c);
 
 %------------------------------ Helper Functions ------------------------------%
 

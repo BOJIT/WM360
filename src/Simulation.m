@@ -152,6 +152,19 @@ classdef Simulation < handle
             obj.IirDenominatorCoefficients = hzDen;
             obj.setConfig();
         end
+
+        % Generates a set of Sine waves from an array of frequencies at the given sample rate
+        function stream = testSignal(obj, freqs, samples)
+            stop_time = (1/obj.SampleRate) * (samples - 1);
+            t = 0:(1/obj.SampleRate):stop_time;
+            signal = zeros(1, samples);
+            for freq = freqs
+                s = sin(2*pi*freq*t);
+                signal = signal + s;
+            end
+            gain = obj.NormalizationLevel/max(abs(signal));
+            stream = signal.*gain;
+        end
     end
 
     %------------------------------ Private Methods ---------------------------%
