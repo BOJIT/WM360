@@ -26,9 +26,9 @@ sim.Scheme = 'a-law';
 
 % Any arbitrary signal can be input
 % audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
-audio_in = sim.testSignal([2000, 9000], 2000);
+% audio_in = sim.testSignal([2000, 9000], 2000);
 
-% audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
+audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
 
 % Simulink Audio Pipeline
 pcm = sim.encode(audio_in);
@@ -55,9 +55,9 @@ in_freq = abs(fft(audio_in));
 out_freq = abs(fft(audio_out));
 
 fig.ActiveAxes = 2;
-in_trace = fig.plot(in_freq(1:length(in_freq)/2));
+in_trace = fig.plot(in_freq(1:floor(length(in_freq)/2)));
 in_trace.DisplayName = "Audio Input";
-out_trace = fig.plot(out_freq(1:length(out_freq)/2));
+out_trace = fig.plot(out_freq(1:floor(length(out_freq)/2)));
 out_trace.DisplayName = "Audio Output";
 fig.Title = "Frequency Domain";
 legend(fig.Axes(fig.ActiveAxes), 'location', 'northeast');
