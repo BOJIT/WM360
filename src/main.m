@@ -10,11 +10,13 @@ close all; clc; clear;
 %-------------------------------- Entry Point ---------------------------------%
 
 sim = Simulation();
+sim.Scheme = 'a-law';
 
 % a = sim.capture(2);
 
 % Any arbitrary signal can be input
-a = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
+% a = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
+a = sim.testSignal([2000], 100);
 
 fig = Figure([2, 2]);
 
