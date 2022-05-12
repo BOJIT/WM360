@@ -1,5 +1,11 @@
-function [hzNum,hzDen] = FIRMaker(tap,fc,fs)
+% FILE:         generateFIR.m
+% DESCRIPTION:  Generate coefficients for an FIR filter
+% AUTHOR:       Josh Routley
+% DATE CREATED: 12/05/2022
 
+%------------------------------------------------------------------------------%
+
+function [hzNum,hzDen] = FIRMaker(tap,fc,fs)
 
 hzNum = zeros(1,tap);
 wn = hzNum;
