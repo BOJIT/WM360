@@ -5,7 +5,7 @@
 
 %------------------------------------------------------------------------------%
 
-function [hzNum,hzDen] = FIRMaker(tap,fc,fs)
+function [hzNum,hzDen] = generateFIR(tap,fc,fs)
 
 hzNum = zeros(1,tap);
 wn = hzNum;
