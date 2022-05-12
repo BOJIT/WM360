@@ -15,8 +15,8 @@ sim = Simulation();
 % a = sim.capture(2);
 
 % Any arbitrary signal can be input
-% a = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
-a = sim.testSignal([2000], 50);
+a = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
+% a = sim.testSignal([2000], 2000);
 
 fig = Figure([2, 2]);
 
