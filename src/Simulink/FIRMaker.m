@@ -18,7 +18,7 @@ for n = -m:m
     end
 end
 hzNum;
-hzNum = hzNum.*wn;
+hzNum = hzNum.*wn
 hzDen = [1 zeros(1,(length(hzNum)-1))];
 
 [dB,w] = freqz(hzNum,[1],512);
