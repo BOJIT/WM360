@@ -9,6 +9,7 @@ classdef Simulation < handle
 
     %---------------------------- Public Properties ---------------------------%
     properties
+        DemoMode = false;           % Keeps standalone Simulink files operable
         DecimationFactor = 3;
         SampleRate = 48000;
         Scheme = 'linear';
@@ -33,7 +34,6 @@ classdef Simulation < handle
         DecoderSim;
 
         NativeBitDepth = 16;        % Default sample depth of PC audio hardware
-        DemoMode = false;           % Keeps standalone Simulink files operable
         NormalizationLevel = 2.4;   % Scales recorded/output audio to full-scale
 
         % List of object properties that get written to Simulink workspace
@@ -133,7 +133,7 @@ classdef Simulation < handle
             stop_time = (1/obj.SampleRate) * (obj.DecimationFactor*length(data) - 1);
             t = 0:(obj.DecimationFactor/obj.SampleRate):stop_time;
             in = timeseries(int16(data), t);
-%             save('data.mat','in', '-v7.3');
+            % save('data.mat','in', '-v7.3');
 
             obj.DecoderSim = obj.DecoderSim.setExternalInput(in);
             obj.DecoderSim = obj.DecoderSim.setModelParameter('StopTime', num2str(stop_time + (0.5/obj.SampleRate)));
@@ -208,6 +208,11 @@ classdef Simulation < handle
 
     %------------------------------ Get/Set Methods ---------------------------%
     methods
+        function set.DemoMode(obj, val)
+            obj.DemoMode = val;
+            obj.setConfig();
+        end
+
         function set.DecimationFactor(obj, val)
             obj.DecimationFactor = val;
             obj.setConfig();
