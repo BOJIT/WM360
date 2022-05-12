@@ -1,26 +1,24 @@
-% FILE:         generateFIR.m
-% DESCRIPTION:  Function to generate FIR Anti-Aliasing filter for PCM Encoder
-% AUTHOR:       Josh Routley
-% DATE CREATED: 07/05/2022
+function [hzNum,hzDen] = FIRMaker(tap,fc,fs)
 
-%------------------------------------------------------------------------------%
-
-tap = 25;
-fc = 6100;
-fs = 48000;
 
 hzNum = zeros(1,tap);
+wn = hzNum;
 
 omegaC = 2*pi*fc/fs;
 m = (tap-1)/2;
 for n = -m:m
+%     wn(n+m+1) = 1;
+%     wn(n+m+1) = 1-abs(n)/m;
+    wn(n+m+1) = 0.54+0.46*cos(n*pi/m);
+%     wn(n+m+1) = 0.42 + 0.5*cos(n*pi/m) + 0.08*cos(2*n*pi/m)
     if n == 0
         hzNum(n+m+1) = omegaC/pi;
     else
         hzNum(n+m+1) = sin(omegaC*n)/(n*pi);
     end
 end
-disp(hzNum)
+hzNum;
+hzNum = hzNum.*wn;
 hzDen = [1 zeros(1,(length(hzNum)-1))];
 
 [dB,w] = freqz(hzNum,[1],512);
@@ -32,7 +30,7 @@ figure;
 subplot(2,1,1)
 plot(w/pi*fs/2,dB)
 % ax = gca;
-% ax.YLim = [-20 2]
+% ax.XLim = [0 10000]
 hold on
 xline(6100)
 hold on
@@ -51,10 +49,11 @@ ylabel('Phase [degrees]')
 
 
 figure;
-y = conv(hzNum,[1 0 0 0 0 0])
+y = conv(hzNum,[1 0 0 0 0 0]);
 stem(0:(tap-1),y(1:tap))
 xlabel('n')
 ylabel('Amplitude')
 title('Impulse response of 15 tap lowpass FIR filter')
 % ax = gca;
 % ax.XLim = [0 tap+1]
+end
