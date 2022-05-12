@@ -44,7 +44,7 @@ classdef Simulation < handle
             "FirNumeratorCoefficients", ...
             "FirDenominatorCoefficients", ...
             "IirNumeratorCoefficients", ...
-            "IirNumeratorCoefficients", ...
+            "IirDenominatorCoefficients", ...
             "IsLinear", ...
             "IsALaw", ...
         ];
@@ -141,13 +141,15 @@ classdef Simulation < handle
             stream = result.yout{1}.Values.Data';
         end
 
-        function setFIR(obj, hzNum, hzDen)
+        function setFIR(obj, fc, taps)
+            [hzNum, hzDen] = generateFIR(fc, taps, obj.SampleRate, true);
             obj.FirNumeratorCoefficients = hzNum;
             obj.FirDenominatorCoefficients = hzDen;
             obj.setConfig();
         end
 
-        function setIIR(obj, hzNum, hzDen)
+        function setIIR(obj, fc, taps, type)
+            [hzNum, hzDen] = generateIIR(fc, taps, type, obj.SampleRate, true);
             obj.IirNumeratorCoefficients = hzNum;
             obj.IirDenominatorCoefficients = hzDen;
             obj.setConfig();
