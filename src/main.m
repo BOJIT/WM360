@@ -9,6 +9,11 @@ close all; clc; clear;
 
 %----------------------------------- Config -----------------------------------%
 
+DecimationFactor = 3;
+SampleRate = 48000;
+% Scheme = 'linear';
+Scheme = 'a-law';
+
 FIRCutoff = 6100;
 FIRTaps = 25;
 
@@ -19,10 +24,9 @@ IIRType = 'Butterworth';
 %-------------------------------- Entry Point ---------------------------------%
 
 % Set up simulation
-sim = Simulation();
+sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
-% sim.Scheme = 'a-law';
 
 % Any arbitrary signal can be input
 
@@ -41,7 +45,8 @@ sim.playback(audio_out);    % Play back reconstructed audio signal
 %------------------------------------ Plots -----------------------------------%
 
 fig = Figure([1, 2]);
-fig.SuperTitle = "Audio Pipeline Analysis";
+fig.SuperTitle = sprintf("Audio Pipeline Analysis\n Sample Rate = %u Hz, Decimation Factor = %u, Scheme = %s", ...
+                            sim.SampleRate, sim.DecimationFactor, sim.Scheme);
 
 %------- Time domain -------%
 
@@ -74,15 +79,11 @@ in_trace.DisplayName = "Audio Input";
 out_trace = fig.plot(out_freq, out_mag);
 out_trace.DisplayName = "Audio Output";
 q_trace = fig.plot(q_freq, q_mag);
-q_trace.DisplayName = "Quantization Error";
+q_trace.DisplayName = "Error Delta";
 fig.Title = "Frequency Domain";
 fig.XLabel = "Frequency / Hz";
 fig.YLabel = "Normalised Magnitude";
 legend(fig.Axes(fig.ActiveAxes), 'location', 'northeast');
-
-
-% fig2 = Figure();
-% fig2.Title = "Quantization error";
 
 %------------------------------ Helper Functions ------------------------------%
 
