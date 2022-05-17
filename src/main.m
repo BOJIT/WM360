@@ -28,7 +28,8 @@ sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
 
-sim.Dithering = true;
+% sim.Dithering = true;
+sim.NoiseGate = true;
 
 % Any arbitrary signal can be input
 
