@@ -13,6 +13,8 @@ classdef Simulation < handle
         DecimationFactor = 3;
         SampleRate = 48000;
         Scheme = 'linear';
+        Dithering = false;
+        NoiseGate = false;
 
         FirNumeratorCoefficients = [1, 1];
         FirDenominatorCoefficients = [1, 1];
@@ -41,6 +43,8 @@ classdef Simulation < handle
             "DecimationFactor", ...
             "DemoMode", ...
             "SampleRate", ...
+            "Dithering", ...
+            "NoiseGate", ...
             "FirNumeratorCoefficients", ...
             "FirDenominatorCoefficients", ...
             "IirNumeratorCoefficients", ...
@@ -227,6 +231,16 @@ classdef Simulation < handle
 
         function set.Scheme(obj, val)
             obj.Scheme = val;
+            obj.setConfig();
+        end
+
+        function set.Dithering(obj, val)
+            obj.Dithering = val;
+            obj.setConfig();
+        end
+
+        function set.NoiseGate(obj, val)
+            obj.NoiseGate = val;
             obj.setConfig();
         end
 

@@ -28,13 +28,15 @@ sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
 
+sim.Dithering = true;
+
 % Any arbitrary signal can be input
 
 % audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
 % audio_in = sim.testSignal([2000, 9000], 2000);
-audio_in = sim.testSignal([1000], 2000);
+% audio_in = sim.testSignal([1000], 2000);
 
-% audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
+audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
 
 % Simulink Audio Pipeline
 pcm = sim.encode(audio_in);
@@ -76,10 +78,14 @@ legend(fig.Axes(fig.ActiveAxes), 'location', 'northeast');
 fig.ActiveAxes = 2;
 in_trace = fig.plot(in_freq, in_mag);
 in_trace.DisplayName = "Audio Input";
+in_trace.Color = makeTransparent(in_trace.Color, 0.4);
 out_trace = fig.plot(out_freq, out_mag);
 out_trace.DisplayName = "Audio Output";
+out_trace.Color = makeTransparent(out_trace.Color, 0.4);
 q_trace = fig.plot(q_freq, q_mag);
 q_trace.DisplayName = "Error Delta";
+q_trace.Color = makeTransparent(q_trace.Color, 0.4);
+
 fig.Title = "Frequency Domain";
 fig.XLabel = "Frequency / Hz";
 fig.YLabel = "Normalised Magnitude";
@@ -140,6 +146,10 @@ function [xa, ya] = align_signals(x, y)
     max_len = min(length(xa), length(ya));
     xa = xa(1:max_len);
     ya = ya(1:max_len);
+end
+
+function new_col = makeTransparent(old_col, alpha)
+    new_col = [old_col(1), old_col(2), old_col(3), alpha];
 end
 
 %------------------------------------------------------------------------------%
