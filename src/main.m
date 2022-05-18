@@ -28,16 +28,16 @@ sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
 
-% sim.Dithering = true;
-sim.NoiseGate = true;
+sim.Dithering = true;
+% sim.NoiseGate = true;
 
 % Any arbitrary signal can be input
 
-% audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300], 96000);
+% audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300, 9000], 96000);
 % audio_in = sim.testSignal([2000, 9000], 2000);
-% audio_in = sim.testSignal([1000], 2000);
+audio_in = sim.testSignal([1000], 2000);
 
-audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
+% audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
 
 % Simulink Audio Pipeline
 pcm = sim.encode(audio_in);
