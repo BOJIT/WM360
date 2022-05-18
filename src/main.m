@@ -28,16 +28,16 @@ sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
 
-sim.Dithering = true;
-% sim.NoiseGate = true;
+% sim.Dithering = true;
+sim.NoiseGate = true;
 
 % Any arbitrary signal can be input
 
 % audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300, 9000], 96000);
 % audio_in = sim.testSignal([2000, 9000], 2000);
-audio_in = sim.testSignal([1000], 2000);
+% audio_in = sim.testSignal([1000], 2000);
 
-% audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
+audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
 
 % Simulink Audio Pipeline
 pcm = sim.encode(audio_in);
@@ -86,6 +86,8 @@ out_trace.Color = makeTransparent(out_trace.Color, 0.4);
 q_trace = fig.plot(q_freq, q_mag);
 q_trace.DisplayName = "Error Delta";
 q_trace.Color = makeTransparent(q_trace.Color, 0.4);
+h = get(gca,'Children');
+set(gca,'Children',[h(2) h(3) h(1)]);
 
 fig.Title = "Frequency Domain";
 fig.XLabel = "Frequency / Hz";

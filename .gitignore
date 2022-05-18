@@ -8,6 +8,8 @@ hooks/locals
 *.slxc
 *.DS_Store
 *.mat
+*.wav
+*.png
 !src/Simulink/test_stream.mat
 .vscode/settings.json
 .vscode/matlab.code-snippets
