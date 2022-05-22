@@ -9,17 +9,22 @@ close all; clc; clear;
 
 %----------------------------------- Config -----------------------------------%
 
+% Global
 DecimationFactor = 3;
 SampleRate = 48000;
-% Scheme = 'linear';
-Scheme = 'a-law';
+Scheme = 'linear';
+% Scheme = 'a-law';
 
+% Filters
 FIRCutoff = 6100;
 FIRTaps = 25;
-
 IIRCutoff = 6000;
 IIRTaps = 3;
 IIRType = 'Butterworth';
+
+% Enhancements
+Dithering = false;
+NoiseGate = false;
 
 %-------------------------------- Entry Point ---------------------------------%
 
@@ -27,17 +32,19 @@ IIRType = 'Butterworth';
 sim = Simulation(DecimationFactor, SampleRate, Scheme);
 sim.setFIR(FIRCutoff, FIRTaps);
 sim.setIIR(IIRCutoff, IIRTaps, IIRType);
+sim.Dithering = Dithering;
+sim.NoiseGate = NoiseGate;
 
-% sim.Dithering = true;
-sim.NoiseGate = true;
+% Create test signal
 
-% Any arbitrary signal can be input
-
+% sim.testSignal([a, b, c, ...], x) creates a signal that is 'x' samples
+% long, with sine waves at frequencies 'a', 'b', 'c', etc... 
 % audio_in = sim.testSignal([130, 1200, 2700, 5100, 6300, 9000], 96000);
 % audio_in = sim.testSignal([2000, 9000], 2000);
-% audio_in = sim.testSignal([1000], 2000);
+audio_in = sim.testSignal([1000], 2000);
 
-audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
+% or...
+% audio_in = sim.capture(2);  % Record audio from microphone at sim sample rate
 
 % Simulink Audio Pipeline
 pcm = sim.encode(audio_in);
